@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="PEkx0Pu4qoYUJC10CDJiz2" data-dm-ref="1"><head data-page-node-id="c0sCNs6pBCnCZwYpgB02CU">
+<meta charset="UTF-8" data-page-node-id="gx1IZZWXYKTeJg2ba6o64R">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="d8aJTpnWuFaK9NKY7VA0Zh">
+<title>名古屋 2026 亚运会 · 乒乓球观赛指南（单项赛段 TTE10 起）</title>
+<style>
+  :root{
+    --bg:#0f1216; --card:#171c23; --line:#2a323d; --text:#e6edf3; --muted:#9aa7b4;
+    --accent:#e23b3b; --gold:#f4c430; --blue:#4ea1ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,sans-serif;
+    line-height:1.5;padding:28px 18px;}
+  .wrap{max-width:1040px;margin:0 auto;}
+  h1{font-size:22px;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:18px}
+  .meta{background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:12px 16px;font-size:13px;margin-bottom:18px}
+  .meta b{color:var(--blue)}
+  .meta .fx{color:var(--gold)}
+
+  /* 赛程表 */
+  table{border-collapse:collapse;width:100%;font-size:12.5px;background:var(--card);
+    border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  th,td{border-bottom:1px solid var(--line);padding:8px 7px;text-align:left;vertical-align:top}
+  thead th{background:#1f2630;color:var(--text);font-weight:600;text-align:center}
+  thead th.fix{text-align:left}
+  tbody tr:hover{background:#1b2129}
+  td.date,td.wk{text-align:center;vertical-align:middle;font-weight:600;white-space:nowrap}
+  td.jt{text-align:center;vertical-align:middle;white-space:nowrap}
+  td.ev{text-align:center;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+  .tt{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold);font-weight:600}
+  .none{color:#5b6675}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:10px 0 0}
+  .legend span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:middle}
+  .lg-g::before{background:var(--gold)} .lg-m::before{background:#e07b39}
+  .note{color:var(--muted);font-size:12px;margin-top:14px;line-height:1.7}
+
+  /* 区块通用 */
+  .sec{margin-top:28px;border-top:1px solid var(--line);padding-top:22px}
+  .sec h2{font-size:18px;margin:0 0 4px;color:var(--text)}
+  .sec .csub{color:var(--muted);font-size:13px;margin-bottom:14px}
+
+  /* 观赛通勤 timeline（深色适配） */
+  .cstats{display:flex;gap:12px;margin:0 0 16px}
+  .cstat{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 10px;text-align:center}
+  .cstat .v{font-size:17px;font-weight:800;color:var(--gold)}
+  .cstat .k{font-size:11px;color:var(--muted);margin-top:3px}
+  .ctimeline{position:relative;padding-left:40px;margin:10px 0}
+  .ctimeline::before{content:"";position:absolute;left:16px;top:8px;bottom:8px;width:3px;
+    background:linear-gradient(var(--gold),var(--blue),var(--accent),#6B8E5A);border-radius:3px}
+  .cstep{position:relative;margin-bottom:16px}
+  .cdot{position:absolute;left:-40px;top:2px;width:32px;height:32px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;color:#1f2733;font-weight:800;font-size:13px;border:3px solid var(--bg)}
+  .ccard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+  .ccard .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px}
+  .cline{font-size:11px;font-weight:700;color:#fff;padding:3px 9px;border-radius:999px}
+  .ccard h3{font-size:14.5px;font-weight:700;color:var(--text)}
+  .ccard .ja{font-size:12px;color:var(--muted);margin-top:2px}
+  .ccard p{font-size:13px;color:var(--muted);margin-top:5px}
+  .cbadges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .cbadge{font-size:12px;background:#1f2630;color:var(--text);padding:4px 10px;border-radius:8px;font-weight:600}
+  .cbadge b{color:var(--gold)}
+  .chigashi{background:var(--gold);color:#3a2c00}
+  .ctsurumai{background:var(--blue)}
+  .cmei{background:var(--accent)}
+  .cwalk{background:#6B8E5A}
+  .ctips{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:6px}
+  .ctips h4{font-size:13.5px;margin-bottom:8px;color:var(--text)}
+  .ctips ul{list-style:none;margin:0;padding:0}
+  .ctips li{font-size:12.5px;color:var(--muted);padding:4px 0 4px 18px;position:relative}
+  .ctips li::before{content:"▸";position:absolute;left:2px;color:var(--blue);font-weight:700}
+  .ctips li b{color:var(--text)}
+
+  /* 机场对比表 */
+  .atable{border-collapse:collapse;width:100%;font-size:12.5px;background:var(--card);
+    border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:12px}
+  .atable th,.atable td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+  .atable thead th{background:#1f2630;color:var(--text);font-weight:600;text-align:center}
+  .atable thead th.fix{text-align:left}
+  .atable tbody tr:hover{background:#1b2129}
+  .atable td.c{text-align:center}
+  .atable .ym{color:var(--gold);font-weight:600;white-space:nowrap}
+  .route-note{color:var(--muted);font-size:12.5px;margin:6px 0 0;line-height:1.7}
+  .route-note b{color:var(--text)}
+  .tip{background:#1a2230;border-left:3px solid var(--accent);border-radius:6px;padding:8px 12px;
+    font-size:12.5px;color:var(--muted);margin:10px 0 0;line-height:1.7}
+  .tip b{color:var(--text)}
+  .note2{color:var(--muted);font-size:12px;margin-top:8px;line-height:1.7}
+</style>
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="J8L9M7oVeueGgPrA4FTZdr" style="position: relative;">
+<div class="wrap" data-page-node-id="YymIOV535De0ISQFdHIMin">
+
+  <!-- ============ 1. 赛程 ============ -->
+  <h1 data-page-node-id="bmX6wAjo7oKIYABkpVLwLj">名古屋 2026 亚运会 · 乒乓球赛程表</h1>
+  
+
+  <div class="meta" data-page-node-id="dEUrzQjlFJbwnTxdF5BHPs" style="">
+    场馆：<b data-page-node-id="oyxDqMpZFG4BzZZCuJoacM">SKY HALL TOYOTA（丰田天空大厅 / スカイホール豊田）</b>，日本爱知县丰田市<br data-page-node-id="0AVpljWWe9x191rjCaYMwn">
+    单项赛段：<b data-page-node-id="ph12uog181W03WY7vuuYW6">2026/9/25（周五）– 9/28（周一）</b>|　时间为<b data-page-node-id="ZwhZDTvBTCuyq8z5OJ9gkF">日本时间（UTC+9）</b>；北京时间 = 日本时间 − 1 小时<br data-page-node-id="BoIaS0oLWr0eZ902yH4gE6">
+    <span class="fx" data-page-node-id="gPuw5yFAvJF4qekJl4z1bo">汇率参考：100 日元 ≈ 4.30 人民币（2026-09-05 招行/农行中间价，以实时为准）</span>
+  </div>
+
+  <table data-page-node-id="TVcKLmdJnXLWDseH9lu0GX">
+    <thead data-page-node-id="AXyH8hxeNS6ja56Sp7UzIX">
+      <tr data-page-node-id="MFUWL5G4lY4d7EkHu8UA8Q">
+        <th class="fix" data-page-node-id="BeHddBwADug37osVC7YgjR">赛程</th><th class="fix" data-page-node-id="NNozHacLy8uRiZi2SIGEKz">日期</th><th data-page-node-id="E5Vf1R2I0EDHssjbrT7XSw">星期</th><th data-page-node-id="DEJbR90kQUIugLiAP626oz">日本时间</th>
+        <th data-page-node-id="dTuf7mYKDmokZqUg2foHiu">混双</th><th data-page-node-id="oOhv6yKTLx1HVXVTIdllgd">女单</th><th data-page-node-id="SGRptH0CXiqxiAoEQbzd7T">男单</th><th data-page-node-id="uU7TDVylz9Awr0z592dI6E">男双</th><th data-page-node-id="WJzGzCMYEoEJgYrOk1duQ6">女双</th>
+      </tr>
+    </thead>
+    <tbody data-page-node-id="8xzFB9tbGAlwd6zhHoXEjh">
+      <tr data-page-node-id="p3hjWZWEUCGJsBFvoWFbk8">
+        <td class="tt" data-page-node-id="Rxl4XzcR87JOC1jcK62RmZ">TTE10</td><td class="date" data-page-node-id="DA6aqWBRX878Oex96sfpKU">9/25 🏮</td><td class="wk" data-page-node-id="ooNEKwDOiktwGGXNcGl06Y">周五</td><td class="jt" data-page-node-id="E6JaqsThN93Z1v9rvyKTai">10:00</td>
+        <td class="ev" data-page-node-id="gYDB9pxrngy6qnP9sxvYQp">QF–SF</td><td class="ev" data-page-node-id="NCJqoIpV6eyTASAE3a7wnd">R2–R3</td><td class="ev" data-page-node-id="0fAnQCANetZgRAxJkyj5A9">R3</td><td class="ev" data-page-node-id="9HUyOd0nLZj3GonzGh8QFi">R2–R3</td><td class="ev" data-page-node-id="d7N2M306l0jaGEDuQsmePE">R3</td>
+      </tr>
+      <tr data-page-node-id="XpTRarVzUs2YRQBBPVqOVd">
+        <td class="tt" data-page-node-id="Q7kW9m7wiv2YybBNPHSkfQ">TTE11</td><td class="date" rowspan="2" data-page-node-id="WmQyq8mfDCOsZTEzjQC4RB">9/26 🏮</td><td class="wk" rowspan="2" data-page-node-id="XFg5NuWU7j4oAl5XysFbrL">周六</td><td class="jt" data-page-node-id="70R0dWE62lrUD4hGeIp18o">10:00</td>
+        <td class="ev none" data-page-node-id="UwUtkj7k4M2LnfpaFh2UG7">—</td><td class="ev" data-page-node-id="Xnc3lIi0kLWwdti4cLG30k">R4</td><td class="ev" data-page-node-id="9kYaLMZ6pJw7uE1fXAAwrE">R4</td><td class="ev none" data-page-node-id="Q6TmqHhuLBMKoCwLFBmK7H">—</td><td class="ev none" data-page-node-id="2OuNTIUahhVMHYWwfbDOaZ">—</td>
+      </tr>
+      <tr data-page-node-id="UCcV7Eg8iZZpHEDBRE0Edc">
+        <td class="tt" data-page-node-id="PeefjSE2ktFO6DOJQPqyoX">TTE12</td><td class="jt" data-page-node-id="L8lXEgnYg11tWnSykvshbM">15:30</td>
+        <td class="ev" data-page-node-id="mAKljlsG8RBm1FpC7P7gWu">决赛 🏅</td><td class="ev" data-page-node-id="idbi581YgnuQaHzQZzr5mH">QF</td><td class="ev" data-page-node-id="0meQb08AhHN3Y6tDreZ3tI">QF</td><td class="ev" data-page-node-id="fLWBqx9hk16abydGHvXaEL">QF</td><td class="ev" data-page-node-id="sy5ZGreZFwSzBlFYk8ZtBo">QF</td>
+      </tr>
+      <tr data-page-node-id="tjTiVGkivHBzmB10FRJSP5">
+        <td class="tt" data-page-node-id="9uTZlJYfuA4XYDf8vB4CJc">TTE13</td><td class="date" rowspan="2" data-page-node-id="N0VtwWOo8cOorlWOtmGjPv">9/27 🏮</td><td class="wk" rowspan="2" data-page-node-id="RDhESh9tyvetdFCBBEvJDs">周日</td><td class="jt" data-page-node-id="9czfOWEV1DaazwA0sFKONY">12:00</td>
+        <td class="ev none" data-page-node-id="CFQ6IzfSS4pH2xwPDswI1e">—</td><td class="ev" data-page-node-id="Wr3yMmUm3PFSg4V66Ht9Fq">SF</td><td class="ev none" data-page-node-id="0C1oHrSxdCUWqSjcik0Asu">—</td><td class="ev" data-page-node-id="eVBmkq1Bwh2k0dCIEEAPjB">SF</td><td class="ev none" data-page-node-id="78oEdVRF6W1uJB6HRfc0Bk">—</td>
+      </tr>
+      <tr data-page-node-id="lBN1qm65m5j63p4C2wRqhV">
+        <td class="tt" data-page-node-id="a64l70grXwFZHK9xLtiI32">TTE14</td><td class="jt" data-page-node-id="TaznXagyFWJQgPMYXlQ3Yx">19:00</td>
+        <td class="ev none" data-page-node-id="14Deb2eLKeSoz9ykFCGE5C">—</td><td class="ev" data-page-node-id="IgAcWp2cwcogAtz9gBFLyA">决赛 🏅</td><td class="ev none" data-page-node-id="ALvmGssGQnMXeQAnnwTSzB">—</td><td class="ev" data-page-node-id="MyL6ppTQKxtKbnMN2VwrjB">决赛 🏅</td><td class="ev none" data-page-node-id="ivzCBHEMnZuPfvXnqqoNAm">—</td>
+      </tr>
+      <tr data-page-node-id="a1MNOSJoosrfHjOVHDuo9Z">
+        <td class="tt" data-page-node-id="1Yz79HUhD2TCH4Et0KTThW">TTE15</td><td class="date" rowspan="2" data-page-node-id="lA2j8PE13yPPxHn4zfYyzP">9/28</td><td class="wk" rowspan="2" data-page-node-id="MWIHQg0sFClyKCW8ys0ort">周一</td><td class="jt" data-page-node-id="VGcYzvdesGjnmwY4u8PuFf">12:00</td>
+        <td class="ev none" data-page-node-id="j6tEoWJjccK25lBxO5IGCr">—</td><td class="ev none" data-page-node-id="qYRpECW0swykrnI1nRtiyQ">—</td><td class="ev" data-page-node-id="ndeqdjXICLTTxSyQIFYqWc">SF</td><td class="ev none" data-page-node-id="g9u5iUiATiRf0iNIBvbbOw">—</td><td class="ev" data-page-node-id="8gs0EG9kSsWNeyUO1yz2Np">SF</td>
+      </tr>
+      <tr data-page-node-id="SFJVKz5YkGBLKl3e9PNpum">
+        <td class="tt" data-page-node-id="9jdps28GXFrWS3a6cLWW71">TTE16</td><td class="jt" data-page-node-id="ApdwrzH3ycFs7Jr6nvSRst">19:00</td>
+        <td class="ev none" data-page-node-id="ENlYkCqNxbGTWsWdoDN3bV">—</td><td class="ev none" data-page-node-id="7VcOKiPHLLbr3iaDCIGEPl">—</td><td class="ev" data-page-node-id="IYZjFXEecVKiHCW2hhRDNz">决赛 🏅</td><td class="ev none" data-page-node-id="dfQozL9mqKUhoyQNFZBPaY">—</td><td class="ev" data-page-node-id="kN5jr5lIlAWZhWXN0c5ver">决赛 🏅</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="legend" data-page-node-id="9VCq7NOqd8Lhzu6adl1Y0p">
+    <span class="lg-g" data-page-node-id="t9rA1r2rz3pAg4lynLa7FP">🏅 = 该场产生金牌</span>
+    <span class="lg-m" data-page-node-id="0MFHxIBGC7qSlQHhmIdQSz">🏮 = 中秋放假（9/25–27）</span>
+    <span class="lg-m" style="color:var(--muted)" data-page-node-id="vsL8TbxfQkyM3RVfuwcpRz">R1/R2…= 第1/2轮；QF=1/4决赛；SF=半决赛；— = 该场无此项目</span>
+  </div>
+
+  
+
+  <!-- ============ 2. 观赛通勤 ============ -->
+  <div class="sec" data-page-node-id="yJ0TSjDn8RTfOHxJbtNugB">
+    <h2 data-page-node-id="OaDD2wbmNBz3tjGmhpoI2D">② 观赛通勤：池下站 → Sky Hall Toyota（丰田天空大厅）</h2>
+    <div class="csub" data-page-node-id="IBcHhD9wjXnST5E0xCTh9V">场馆最近站：<b data-page-node-id="7tUrGbSxkcXVbDKWLEiv9K">名铁丰田市站</b>（步行约 14 分）/ <b data-page-node-id="d0mOSG6fDImcByTDYcSOPr">新丰田站</b>（爱知环状铁道，步行约 17 分）｜ 推荐方案：地铁东山线 + 鹤舞线/名铁丰田线直通，<b data-page-node-id="wvN5EHwMGHzPSCVqtsp8RQ">仅伏见站换乘 1 次</b></div>
+
+    <div class="cstats" data-page-node-id="WdaPVCo87D0ukMIPom845F">
+      <div class="cstat" data-page-node-id="YBcXX7J91W2o7V1LfE5txG"><div class="v" data-page-node-id="A6tGJzVnMDp600Hz1359kd">约 80–90 分</div><div class="k" data-page-node-id="4flSOoAheMBojIXuyytEIJ">总耗时（含等车/步行）</div></div>
+      <div class="cstat" data-page-node-id="wWahHFAeweeKBFmcBV1lJ4"><div class="v" data-page-node-id="20lXLv0Ff3Ee7nz4CSCPLa">约 ¥780–830</div><div class="k" data-page-node-id="RbVSPmQxrGoKAuAm3CSQu3">总票价（IC 卡）</div></div>
+      <div class="cstat" data-page-node-id="7cJyN77qt7RD29fYyV1MLM"><div class="v" data-page-node-id="ShQbm9DaOoAuW7Zkj7scYv">换乘 1 次</div><div class="k" data-page-node-id="YAZ7lK6gjxXYwOa8AZuhRg">伏见站</div></div>
+    </div>
+
+    <div class="ctimeline" data-page-node-id="rldVWYSD9cNUq0zVYI3Vfv">
+      <div class="cstep" data-page-node-id="pzM8SHUbInA1lvtqjrFuEf">
+        <div class="cdot chigasha" data-page-node-id="zHTEd5ugHDibrFh6WAhvzX">1</div>
+        <div class="ccard" data-page-node-id="ZKGD7BstWpOaFta9h69UXK">
+          <div class="top" data-page-node-id="8nwxfiAZTMApP3HNk6Ukl1"><span class="cline chigasha" data-page-node-id="WXctIg2x2NAYWE4suhhzYz">地铁东山线</span><h3 data-page-node-id="8nmxJpgaE7UsGrWEHg7mYe">池下駅 上车 → 伏見駅 下车</h3></div>
+          <div class="ja" data-page-node-id="DebYl3WyVsDA6V6BC60LcN">池下駅（東山線・往高畑方向）→ 伏見駅</div>
+          <p data-page-node-id="rNzFQBB4UIcohtKdlKTmko">池下站坐东山线，往「高畑」方向，经今池・千种・荣，5 站后到伏见站。班次频繁（约 5 分钟一班）。</p>
+          <div class="cbadges" data-page-node-id="ZOhPFOtBymPGwUi781b8hl"><span class="cbadge" data-page-node-id="4q2j1EBFvmmkJNlAMK4Yj6">站数 <b data-page-node-id="oGUAnxkEschpk5AyyH1h5Y">5 站</b></span><span class="cbadge" data-page-node-id="DIpqtZZnhQ42A9vnGpNH7v">耗时 <b data-page-node-id="0lA1lRA2pqXguLIzs3ylmt">约 9 分钟</b></span><span class="cbadge" data-page-node-id="ubytivSUi7huk5CdMmSbr2">票价 <b data-page-node-id="qsPTbTiq2OXQIUSf13vlOA">约 ¥230</b></span></div>
+        </div>
+      </div>
+
+      <div class="cstep" data-page-node-id="GbsTuBLNqeWPRCu9FmC1HS">
+        <div class="cdot ctsurumai" data-page-node-id="Rv7vdYQ6LF7zn0rkfUZWKB">2</div>
+        <div class="ccard" data-page-node-id="Q23sWqVlVlcC6vaAhCvAu6">
+          <div class="top" data-page-node-id="72MnD1jhQOBP7etJJs7hXR"><span class="cline ctsurumai" data-page-node-id="7uUDLiEUrIRo3xUbgr2lQX">站内换乘</span><h3 data-page-node-id="QCYcnmQlQHl4eFKkSylQDi">伏見駅 换 鹤舞线</h3></div>
+          <div class="ja" data-page-node-id="oPtaFCIY1oKksrHTyWDyom">伏見駅 で地下鉄鶴舞線（豊田市方面）に乗り換え</div>
+          <p data-page-node-id="m2UYGLwmj7wirPAazHH76Y">伏见站站内换乘鹤舞线，方向选「丰田市（豊田市）」。跟着「鶴舞線・豊田市」指示牌走几步到对面站台即可，<b data-page-node-id="WIUYL9Ns7hWrE9MwTzu7yn">不用出闸机</b>。</p>
+          <div class="cbadges" data-page-node-id="ANuGgWsVtikx4vjUujVWwq"><span class="cbadge" data-page-node-id="Cd8mlIiSOwvJqivtdHUOoP">步行换乘 <b data-page-node-id="vf76Ds1PHnqcrmqLU5dJSb">约 3–5 分钟</b></span></div>
+        </div>
+      </div>
+
+      <div class="cstep" data-page-node-id="oZ3G4ctpPABHkJ4JZA8DUb">
+        <div class="cdot cmei" data-page-node-id="WcGaQtglSnGdCCJO2niiGW">3</div>
+        <div class="ccard" data-page-node-id="b66hx3s2uQVYHxPv0pNepi">
+          <div class="top" data-page-node-id="UHy30BdLJnFvyXRFCHnYZp"><span class="cline cmei" data-page-node-id="pbNiqjwNDeQnoxDLIkaA0i">鹤舞线 / 名铁丰田线 直通</span><h3 data-page-node-id="3DZDSKTQVneUw9E7FMmogV">同列车直达 名鉄豊田市駅</h3></div>
+          <div class="ja" data-page-node-id="R6BSwokfHFGCNVikNAbznl">伏見 →（赤池で名鉄豊田線に直通）→ 名鉄豊田市駅</div>
+          <p data-page-node-id="uTtGSo75BcaCZqSA8IGEEP">这趟车在<b data-page-node-id="DQ6FMIU5B5hanUt7EbSuVy">赤池站会直接"变身"为名铁丰田线</b>，继续开到丰田市——全程不用下车，坐到底即可。伏见—丰田市约 40–45 分钟直达。</p>
+          <div class="cbadges" data-page-node-id="b3klXb9d07XvUfDd1k3P7z"><span class="cbadge" data-page-node-id="T5wdMeBMEEQiYgnspCBzUo">耗时 <b data-page-node-id="VOiezRYiKwhcOcFSxp83pg">约 40–45 分钟</b></span><span class="cbadge" data-page-node-id="NCtqj04myAovDsWVvDrtog">名铁段票价 <b data-page-node-id="lrdEec6AxeMYz0D2N2XSVZ">约 ¥500–540</b></span></div>
+        </div>
+      </div>
+
+      <div class="cstep" data-page-node-id="8BqxONid4BYlwADvAsD0v3">
+        <div class="cdot cwalk" data-page-node-id="vrjkXNcQ7ksGEdeGn81Ocb">4</div>
+        <div class="ccard" data-page-node-id="PDF8c0dLy23rUQMcOezvWO">
+          <div class="top" data-page-node-id="iC658inaMRDn73tOONrkGM"><span class="cline cwalk" data-page-node-id="GXNPzx8pjursMN8tjszHmC">步行</span><h3 data-page-node-id="2NNxAEyfbkqGBiitrr82Mt">名鉄豊田市駅 → スカイホール豊田</h3></div>
+          <div class="ja" data-page-node-id="AqoqmKDTxUAG3H6UAMiu31">名鉄豊田市駅 から 徒歩約14分</div>
+          <p data-page-node-id="hfF8n69qhnH9hBRyhjH5Zf">出站后沿「八幡町・丰田体育场」方向步行约 1.1 km 即到 SKY HALL TOYOTA（与丰田体育场紧邻）。赛事日站前还有<b data-page-node-id="m8dlLXwrxSQis4GClCwjgD">接驳巴士</b>直达球场，下车走几步即达。</p>
+          <div class="cbadges" data-page-node-id="uWaKMAYHM4jh92x0nRcpxw"><span class="cbadge" data-page-node-id="4coHRWVhHXm31DRDUWDMDk">距离 <b data-page-node-id="zjWxO5zHIMQdhRJ6a7Gblk">约 1.1 km</b></span><span class="cbadge" data-page-node-id="wWEkPDA2cbiossBZz2mudv">耗时 <b data-page-node-id="EjR4j8ZHXAHebF8QGTnepR">约 14 分钟</b></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ctips" data-page-node-id="5VTuSshRlvSwudI357HZjG">
+      <h4 data-page-node-id="xJOIKvrOqgQlt8Pt1M7cLO">💡 实用提示</h4>
+      <ul data-page-node-id="3zChkCN93ICqwjQRrQAIDt">
+        <li data-page-node-id="2okrUrlmbykuC1lQFGF1Yc"><b data-page-node-id="G2QQElBGV5CgCsjds7NM30">IC 卡最省心</b>：用 manaca / Suica / TOICA，池下一刷、丰田市一刷，系统自动按「地铁段 + 名铁段」分段扣费，无需分别买票。</li>
+        <li data-page-node-id="YJqvUmDotCYUiV7Vv6bbqb"><b data-page-node-id="mFqacLHRP9v8yznMiOOIZl">赛事日更轻松</b>：大型活动当天，名铁丰田市站有临时接驳巴士直达丰田球场（紧邻 SKY HALL），约 5–10 分钟，票价通常凭票免费或仅几百日元。</li>
+        <li data-page-node-id="GxdmcMCj5knACXsxzeHbxR"><b data-page-node-id="rKEpo5aTu2czB3X1gR3CwC">耗时含弹性</b>：以上为乘车+步行纯时间，实际请预留等车与进出站，总约 80–90 分钟较稳妥；最早上午场 10:00 开打，建议 <b data-page-node-id="PYoxiJF3q5GCU547CjQCgn">7:30 前</b>从池下出发。</li>
+        <li data-page-node-id="l7oQnkOVxXEPMzf3ZXsGXN"><b data-page-node-id="YJLJaHZXzCbWsV5CFXJAmP">出发前核对</b>：数据基于 2026 年公开资料，建议用 Google 地图 / Yahoo! 乘换案内 搜「池下 → スカイホール豊田」确认当日时刻与精确票价。</li>
+      </ul>
+    </div>
+  </div>
+
+    <!-- ============ 3. 机场 → 池下站 ============ -->
+  <div class="sec">
+    <h2>③ 抵达：中部机场 → 池下站（19:50 落地）</h2>
+    <div class="csub">第 1 段为名铁机场线（机场 → 名铁名古屋，μSKY / 特急 / 急行 任选）；第 2 段为名铁名古屋站内换地铁东山线至池下。结构与「② 观赛通勤」同款。</div>
+
+    <div class="cstats">
+      <div class="cstat"><div class="v">约 45–55 分</div><div class="k">总耗时（含换乘 / 等车）</div></div>
+      <div class="cstat"><div class="v">约 ¥1,220 起</div><div class="k">总票价（急行 IC 价）</div></div>
+      <div class="cstat"><div class="v">换乘 1 次</div><div class="k">名古屋站（名铁 ↔ 地铁）</div></div>
+    </div>
+
+    <div class="ctimeline">
+      <div class="cstep">
+        <div class="cdot cmei">1</div>
+        <div class="ccard">
+          <div class="top"><span class="cline cmei">名铁机场线</span><h3>中部国際空港 → 名鉄名古屋</h3></div>
+          <div class="ja">中部国際空港駅 → 名鉄名古屋駅（μSKY / 特急 / 急行 任选）</div>
+          <p>三种车种均为名铁机场线，直达名铁名古屋。μSKY 最快但全车指定席需加购；急行最便宜、末班最晚，性价比最高。19:50 落地预留入境 + 取行李约 20–30 分，约 20:20–20:40 即可乘车，末班（特急 23:31）绰绰有余。</p>
+          <div class="cbadges">
+            <span class="cbadge">μSKY <b>约 28 分</b> · 基础 ¥980 + 指定席 ¥450 ≈ <b>¥1,430</b> · 末班 22:07</span>
+            <span class="cbadge">特急 <b>约 36 分</b> · 基础 <b>约 ¥980</b>（指定席 +¥450）· 末班 23:31</span>
+            <span class="cbadge">急行 <b>约 43 分</b> · <b>约 ¥980</b>（无指定席）· 末班 23:15</span>
+          </div>
+          <p style="margin-top:8px">发车间隔：μSKY / 特急约 30 分/班（混跑），急行约 20–30 分/班。购票：IC 卡（manaca / Suica / TOICA）可刷；μSKY、特急坐指定席车厢需另购指定席券，急行直接刷即可。</p>
+        </div>
+      </div>
+
+      <div class="cstep">
+        <div class="cdot ctsurumai">2</div>
+        <div class="ccard">
+          <div class="top"><span class="cline ctsurumai">站内换乘</span><h3>名鉄名古屋 → 地铁名古屋（名古屋站）</h3></div>
+          <div class="ja">名鉄名古屋駅 から 地下鉄東山線 名古屋駅 へ</div>
+          <p>名铁名古屋站与地铁东山线「名古屋站」地下连通，跟着站内指示步行约 5–10 分钟即到地铁检票口，<b>无需出地面</b>。换乘后坐东山线（往藤丘方向）前往池下。</p>
+          <div class="cbadges"><span class="cbadge">步行换乘 <b>约 5–10 分钟</b></span></div>
+        </div>
+      </div>
+
+      <div class="cstep">
+        <div class="cdot chigasha">3</div>
+        <div class="ccard">
+          <div class="top"><span class="cline chigasha">地铁东山线</span><h3>名古屋（地铁）→ 池下駅</h3></div>
+          <div class="ja">名古屋駅（東山線・往藤丘方面）→ 池下駅（H14）</div>
+          <p>坐东山线往「藤丘」方向，约 6 站、11 分钟到池下站（H14），班次频繁（约 5 分/班）。即「机场 → 池下」全程约 45–55 分钟（含换乘）。</p>
+          <div class="cbadges"><span class="cbadge">站数 <b>约 6 站</b></span><span class="cbadge">耗时 <b>约 11 分钟</b></span><span class="cbadge">票价 <b>约 ¥240</b></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ctips">
+      <h4>💡 实用提示</h4>
+      <ul>
+        <li><b>19:50 落地赶得上</b>：入境 + 取行李约 20–30 分，约 20:20–20:40 到车站；名铁机场线末班（特急 23:31）仍可达，地铁东山线池下往藤丘方向末班为次日 00:09——当晚抵达完全赶得上，无需担心末班车。</li>
+        <li><b>IC 卡最省心</b>：manaca / Suica / TOICA 机场一刷、池下一刷，分段自动扣费；μSKY、特急指定席车厢需另购指定席券（急行无指定席直接刷）。</li>
+        <li><b>票价以现场为准</b>：基础运费各来源有 ¥890 / ¥980 差异，上表按约 ¥980 计；按 100 日元 ≈ 4.30 人民币，急行合计约 ¥1,220（≈ ¥52 人民币）、μSKY 合计约 ¥1,670（≈ ¥72 人民币）。</li>
+      </ul>
+    </div>
+  </div>
+<!-- ============ 4. 池下站 → 名古屋站（转新干线） ============ -->
+  <div class="sec" data-page-node-id="ZZM2yBiupWtJYaydq0dNwy">
+    <h2 data-page-node-id="5EcsYTJE4e0seiXORWWZtp">④ 中转：池下站 → 名古屋站（转乘新干线）</h2>
+    <div class="csub" data-page-node-id="F7WE37NrYARU11m9BPuz09">用途：观赛结束或中途离开名古屋时，从池下出发坐新干线去东京 / 京都 / 大阪等地。</div>
+
+    <table class="atable" data-page-node-id="SboLcLhx1TRXXzw6jpj1mA">
+      <thead data-page-node-id="J01YXywlhkmiOghAxmcVbH">
+        <tr data-page-node-id="NthrvCpwL0cq1L9rT47abn">
+          <th class="fix" data-page-node-id="UC3H2ueHrT6B23X2fZx4Wx">区间</th><th data-page-node-id="H9GaIRGfJukDFGlI6TX3Ah">方式</th><th data-page-node-id="HiVo9tFDX6CuHhM6QlYuhp">耗时</th><th data-page-node-id="7QO1QHrnhY0GPLH3LN5GOe">费用</th><th data-page-node-id="M6XJB7Hzs1oZTqbdBxchsv">换乘</th><th data-page-node-id="d2tiPdFCjtDlfgO13lwOb1">备注</th>
+        </tr>
+      </thead>
+      <tbody data-page-node-id="HpncVr4TQN9CPAhsWwLUcC">
+        <tr data-page-node-id="oBdZa8MBz4tXPttcba7vhE">
+          <td data-page-node-id="VxJqrxs4iGY1XGQ5QmzZFe"><b data-page-node-id="zL4viZLq2IdtDQRrU7nAz6">池下站 → 名古屋站</b></td>
+          <td data-page-node-id="eDBDMDIIE5mRjKxA8YtSjY">地铁东山线（往高畑方向）<b data-page-node-id="GyUrF9Xv2xGDIEq3a3tdwH">直达</b></td>
+          <td class="c" data-page-node-id="Nk3XFKcVBZGfy2rMkjK48r">约 11 分</td>
+          <td class="ym" data-page-node-id="EbAL4YExbSAtIjQhapzxKT">约 ¥240</td>
+          <td class="c" data-page-node-id="1TOn4GqRJneOKXanFSA2wN">无</td>
+          <td data-page-node-id="vC34xJBhuIUNZJaBcXbDXc">池下（H14）→ 名古屋（H08），班次约 5 分/班；首班 05:30、末班 23:54</td>
+        </tr>
+        <tr data-page-node-id="wf3bsNHHTMA4pwD1PHKs6B">
+          <td data-page-node-id="zS5fkDSHdhv3kk3jFWhO9u"><b data-page-node-id="pQj3TxafMSF8WFekwXnyP8">名古屋站 → 新干线</b></td>
+          <td data-page-node-id="MR5ALlTld3JNyFbR5P50wF">站内步行</td>
+          <td class="c" data-page-node-id="DT6E6eumbHfFGMjC9vmGOM">约 5–10 分</td>
+          <td class="c" data-page-node-id="IdbKvB8nUQoa5A2Ygud1Yk">—</td>
+          <td class="c" data-page-node-id="UgdbRNDWsfKA676Rdlwuc6">无</td>
+          <td data-page-node-id="AfhCbX3YS0xAqoNq8DZouI">地铁东山线名古屋站与 JR 新干线站体地下连通；名古屋站为东海道新干线停靠站（东京 / 京都 / 新大阪方向）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="tip" data-page-node-id="AQxIbZOHWIXXtejaIPbSlS">⏱ 若赛后直接离城：从池下坐东山线到名古屋站（11 分），再步行至新干线检票口（5–10 分），全程约 20 分钟内可衔接新干线。东山线池下往名古屋方向末班 23:54，赶晚场后离城也来得及。</p>
+  </div>
+
+  <p class="note2" data-page-node-id="RjF50nSs8IC5REd83kSpKj">实时班次 / 末班车精确时刻请用 Google Maps 或 Navitime 按实际日期查询；跨公司换乘费用以现场为准。备选：中部机场有直达丰田市的巴士（经丰田本社 / 东丰田），若住场馆附近可省去绕名古屋的一段。</p>
+
+</div>
+
+
+
+</body></html>
