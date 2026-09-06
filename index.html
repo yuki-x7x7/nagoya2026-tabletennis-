@@ -169,6 +169,11 @@
   .dbreak{margin:3px 0;padding:3px 0;text-align:center;font-size:10.5px;letter-spacing:3px;color:#5b6675;
     border-top:1px dashed #232b35;border-bottom:1px dashed #232b35}
 
+  /* ===== 美食页（food tables） ===== */
+  .atable td b{color:var(--text)}
+  .atable .fsub{display:block;color:var(--muted);font-size:11.5px;margin-top:2px;font-weight:400}
+  .atable .faddr{color:var(--muted);font-size:12px}
+
   /* ===== 8. 可访问性 / 打印 / 移动端 ===== */
   .nav select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
   @media (prefers-reduced-motion:reduce){
@@ -199,6 +204,7 @@
     .dhead{background:#eee!important;border-color:#bbb!important}
     .dnum,.dwk,.dtime,.dev{color:#000!important}
     .dround,.dbreak{color:#666!important}
+    .fsub,.faddr{color:#555!important}
     .dphase{background:#eee!important;color:#000!important;border:1px solid #999}
     .stt{background:#eee!important;color:#000!important}
     .drow.final{background:#fff8dc!important}
@@ -225,6 +231,8 @@
         <option value="commute">观赛通勤</option>
         <option value="airport">机场交通</option>
         <option value="shinkansen">新干线交通</option>
+        <option value="toyota-food">丰田美食</option>
+        <option value="nagoya-food">名古屋美食</option>
       </select>
     </div>
   </div>
@@ -587,6 +595,201 @@
   </div>
 
   <p class="note2" data-page-node-id="RjF50nSs8IC5REd83kSpKj">实时班次 / 末班车精确时刻请用 Google Maps 或 Navitime 按实际日期查询；跨公司换乘费用以现场为准。备选：中部机场有直达丰田市的巴士（经丰田本社 / 东丰田），若住场馆附近可省去绕名古屋的一段。</p>
+
+</div>
+<div class="page" id="page-toyota-food">
+
+  <div class="sec">
+    <h2>丰田 · 美食合集</h2>
+    <div class="csub">丰田市（SKY HALL 所在地）周边就餐参考；<b style="color:var(--text)">以下全部来自网络整理，千人千味仅供参考</b>。丰田駅前（喜多町一带）最为集中，观赛散场后顺路觅食最方便。</div>
+
+    <div class="tablescroll">
+    <table class="atable">
+      <thead>
+        <tr><th class="fix">类别</th><th class="fix">店名</th><th class="fix">位置 / 电话</th><th class="fix">备注</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>烤肉 / 和牛</b></td>
+          <td><b>焼肉牧場 牛若丸</b></td>
+          <td>丰田市喜多町1-39（トヨタビル 1F/B1/2F）<br>0565-31-0311</td>
+          <td>预约不要</td>
+        </tr>
+        <tr>
+          <td><b>主食 · 拉面</b></td>
+          <td><b>大勝軒（豊田駅前店）</b><span class="fsub">元祖つけ麺 · スタミナつけ麺 · 四川担担面</span></td>
+          <td>丰田站前</td>
+          <td>元祖沾面系</td>
+        </tr>
+        <tr>
+          <td><b>寿司 / 居酒屋</b></td>
+          <td><b>亀八寿司</b></td>
+          <td>丰田市喜多町</td>
+          <td>站前商圈</td>
+        </tr>
+        <tr>
+          <td><b>其他风味 · 咖喱</b></td>
+          <td><b>ムスティング・タカリ（Mustang Thakali）</b><span class="fsub">尼泊尔 / 印度咖喱</span></td>
+          <td>丰田市内</td>
+          <td>推荐较多</td>
+        </tr>
+        <tr>
+          <td><b>咖啡 / 快餐 / 甜品</b></td>
+          <td><b>タリーズ · スターバックス · WORK BENCH COFFEE ROASTERS · EASTENDERS coffee &amp; chocolate · サーティワンアイスクリーム · ミスタードーナツ 等</b><span class="fsub">连锁集中，逛吃方便</span></td>
+          <td>丰田站前商圈（駅ビル等多处集中）</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><b>中餐</b></td>
+          <td><b>中国料理 春華園 豊田店</b></td>
+          <td>丰田市内</td>
+          <td>换口味选择</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="note2">来源：网络整理（截图版「丰田吃的合集」，千人千味仅供参考）；部分条目为截图识别，可能有误差，出发前请以 Google Maps / 电话确认为准。</p>
+  </div>
+
+</div>
+<div class="page" id="page-nagoya-food">
+
+  <div class="sec">
+    <h2>名古屋 · 美食推荐</h2>
+    <div class="csub">这份清单综合了群里姐妹和小红书的推荐，仅做汇总整理供参考——名古屋的美食选择确实比丰田更丰富。</div>
+
+    <div class="tablescroll">
+    <table class="atable">
+      <thead>
+        <tr><th class="fix">类别</th><th class="fix">店名</th><th class="fix">地址</th><th>电话</th><th class="fix">备注</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>三明治</b></td>
+          <td><b>コンパル 大須本店</b><span class="fsub">Komparu · 传统早餐</span></td>
+          <td>中区大須3丁目2-10</td>
+          <td class="c">+81 52-241-3883</td>
+          <td>店面需要排队</td>
+        </tr>
+        <tr>
+          <td><b>三明治 / 甜品</b></td>
+          <td><b>Tsubame Bread &amp; Milk Mochi</b><span class="fsub">名駅 / 名駅南 两家门店</span></td>
+          <td>中村区名駅4丁目2-28 / 名駅南1丁目8-51</td>
+          <td class="c">—</td>
+          <td>约 8:30–11:00 限定、卖完即止，建议早去；先拿号再点；咖啡免费续杯一次</td>
+        </tr>
+        <tr>
+          <td><b>红豆类甜品</b></td>
+          <td><b>あんみつ や 名古屋店</b></td>
+          <td>中村区名駅1丁目1-4</td>
+          <td class="c">+81 52-565-0980</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><b>红豆类甜品</b></td>
+          <td><b>ESPRESSO D WORKS 名古屋</b></td>
+          <td>中区大須2丁目1-17</td>
+          <td class="c">+81 52-492-4713</td>
+          <td>咖喱限定供应</td>
+        </tr>
+        <tr>
+          <td><b>鳗鱼三吃</b></td>
+          <td><b>晴月（Seigetsu）</b></td>
+          <td>東区泉（详见地图）</td>
+          <td class="c">+81 52-932-6466</td>
+          <td>建议预约</td>
+        </tr>
+        <tr>
+          <td><b>鳗鱼三吃</b></td>
+          <td><b>うな祐 錦店（Unasuke）</b></td>
+          <td>中区錦3丁目2-31 Kitauchi Bldg. 1F</td>
+          <td class="c">—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><b>鳗鱼三吃</b></td>
+          <td><b>炭焼 うな富士</b></td>
+          <td>熱田区（详见地图）</td>
+          <td class="c">+81 52-881-9047</td>
+          <td>含税 · 固定座位</td>
+        </tr>
+        <tr>
+          <td><b>居酒屋 · 烤串</b></td>
+          <td><b>武蔵 名古屋駅前店</b></td>
+          <td>中村区名駅（站前）</td>
+          <td class="c">+81 52-541-1634</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><b>居酒屋 · 烤串 / 关东煮</b></td>
+          <td><b>炭火焼き鳥と和風おでん 居酒屋</b><span class="fsub">名古屋駅店</span></td>
+          <td>中村区名駅3丁目7-31</td>
+          <td class="c">+81 52-583-8600</td>
+          <td>含税 · 固定座位</td>
+        </tr>
+        <tr>
+          <td><b>烤肉</b></td>
+          <td><b>烧肉 · 牛杂 伏見 本店</b></td>
+          <td>中村区名駅4丁目</td>
+          <td class="c">+81 52-433-4088</td>
+          <td>含税 · 固定座位</td>
+        </tr>
+        <tr>
+          <td><b>烤肉</b></td>
+          <td><b>烧肉 · 牛杂 丸の内 中日ビル店</b></td>
+          <td>中区丸の内3丁目 中日ビル</td>
+          <td class="c">+81 52-212-7645</td>
+          <td>含税 · 固定座位</td>
+        </tr>
+        <tr>
+          <td><b>拉面</b></td>
+          <td><b>麺家 水先桟（Menya Suizakikusa）</b></td>
+          <td>中村区名駅</td>
+          <td class="c">+81 52-528-0142</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><b>拉面</b></td>
+          <td><b>一蘭 名古屋栄店</b></td>
+          <td>中区栄3丁目15-33</td>
+          <td class="c">—</td>
+          <td>24小时营业</td>
+        </tr>
+        <tr>
+          <td><b>印度料理</b></td>
+          <td><b>NAJ Indian Restaurant</b></td>
+          <td>中区</td>
+          <td class="c">—</td>
+          <td>najindiajapan.com</td>
+        </tr>
+        <tr>
+          <td><b>印度料理</b></td>
+          <td><b>カルシマ（Karshima）</b></td>
+          <td>中区大須3丁目 ハイマート3-A</td>
+          <td class="c">+81 52-212-3131</td>
+          <td>含税 · 固定座位</td>
+        </tr>
+        <tr>
+          <td><b>意大利风味</b></td>
+          <td><b>THE KAWABUN NAGOYA（河文）</b><span class="fsub">Traditional Japanese Restaurant · 江户时代老铺</span></td>
+          <td>中区丸の内2丁目</td>
+          <td class="c">+81 52-222-4020</td>
+          <td>需预先预约</td>
+        </tr>
+        <tr>
+          <td><b>和菓子 · 甜点</b></td>
+          <td><b>丸京わらび餅 名古屋店</b></td>
+          <td>分店信息见官网</td>
+          <td class="c">—</td>
+          <td>warabimochi.com</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="note2">以上信息来自截图整理（部分字迹较模糊的条目可能有识别误差），出发前请以 Google Maps、官网或电话确认为准；鳗鱼三吃 = ひつまぶし（鳗鱼饭三吃，名古屋名物）。</p>
+  </div>
 
 </div>
 <script>
