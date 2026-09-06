@@ -9,11 +9,16 @@
     --accent:#e23b3b; --gold:#f4c430; --blue:#4ea1ff;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);
+  body{margin:0;color:var(--text);
+    background-color:var(--bg);
+    background-image:
+      radial-gradient(900px 520px at 12% -10%, rgba(244,196,48,.09), transparent 62%),
+      radial-gradient(760px 420px at 95% 2%, rgba(78,161,255,.09), transparent 62%);
+    background-repeat:no-repeat;background-attachment:fixed;
     font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,sans-serif;
     line-height:1.5;padding:28px 18px;}
   .wrap{max-width:1040px;margin:0 auto;}
-  h1{font-size:22px;margin:0 0 4px}
+  h1{font-size:30px;font-weight:800;letter-spacing:-.5px;line-height:1.15;margin:0}
   .sub{color:var(--muted);font-size:13px;margin-bottom:18px}
   .meta{background:var(--card);border:1px solid var(--line);border-radius:10px;
     padding:12px 16px;font-size:13px;margin-bottom:18px}
@@ -88,21 +93,149 @@
     font-size:12.5px;color:var(--muted);margin:10px 0 0;line-height:1.7}
   .tip b{color:var(--text)}
   .note2{color:var(--muted);font-size:12px;margin-top:8px;line-height:1.7}
+
+  /* 单页切换导航 */
+  .topbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
+    background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:18px;
+    position:sticky;top:0;z-index:5}
+  .topbar .fx{color:var(--gold);font-size:13px;font-weight:600}
+  .nav{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+  .nav select{font:inherit;font-size:13px;color:var(--text);background:#0f1620;border:1px solid var(--line);
+    border-radius:8px;padding:7px 12px;cursor:pointer}
+  .nav select:focus{outline:2px solid var(--blue)}
+  .page{display:none}
+  .page.active{display:block}
+  .page .sec{margin-top:18px;border-top:none;padding-top:0}
+
+  /* hero / 标题层级 */
+  .hero{margin-bottom:14px}
+  .kicker{display:inline-block;position:relative;color:var(--gold);font-size:12px;font-weight:600;letter-spacing:2px;padding-left:14px;margin-bottom:6px}
+  .kicker::before{content:"";position:absolute;left:0;top:50%;width:9px;height:2px;background:var(--gold);transform:translateY(-50%)}
+  /* 顶栏质感（毛玻璃） */
+  .topbar{background:rgba(23,28,35,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 20px rgba(0,0,0,.35)}
+  /* 表格横向滚动 */
+  .tablescroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0}
+  .tablescroll table{min-width:600px}
+  /* 页面切换动画（签名时刻） */
+  @keyframes pageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:no-preference){ .page.active{animation:pageIn .35s ease both} }
+
+  /* ===== 5. hover 微交互（手感） ===== */
+  .ccard,.cstat,.ctips,.meta,.tip{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .ccard:hover{transform:translateY(-2px);border-color:#3a4553;box-shadow:0 10px 26px rgba(0,0,0,.38)}
+  .cstat:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 8px 20px rgba(0,0,0,.32)}
+  .ctips:hover{border-color:#33404e}
+  .cbadge{transition:background .16s ease}
+  .cbadge:hover{background:#2a323d}
+  .nav select{transition:border-color .16s ease,box-shadow .16s ease}
+  .nav select:hover{border-color:#3a4553}
+  tbody tr{transition:background .16s ease}
+
+  /* ===== 7. 排印 / 关键信息层次 ===== */
+  .tt,td.jt,.cbadge,.cstat .v,.atable .ym{font-variant-numeric:tabular-nums}
+  .sec h2{position:relative;padding-left:12px}
+  .sec h2::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(var(--gold),var(--accent))}
+  /* 渐变主标题：仅在支持 background-clip:text 时启用，避免不支持时变透明不可读 */
+  @supports (-webkit-background-clip:text) or (background-clip:text){
+    .hero h1{background:linear-gradient(180deg,#ffffff,#b7c4d2);
+      -webkit-background-clip:text;background-clip:text;color:transparent}
+  }
+
+  /* ===== 每日详细赛程（day cards） ===== */
+  .days{display:grid;gap:14px}
+  .daycard{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    transition:border-color .18s ease,box-shadow .18s ease}
+  .daycard:hover{border-color:#3a4553;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+  .dhead{display:flex;align-items:center;gap:10px;padding:9px 14px;background:#1f2630;border-bottom:1px solid var(--line)}
+  .dnum{font-weight:800;color:var(--gold);font-size:14px;letter-spacing:.5px}
+  .dwk{color:var(--text);font-weight:600;font-size:13px}
+  .dphase{margin-left:auto;font-size:11px;padding:3px 10px;border-radius:999px;font-weight:700;white-space:nowrap}
+  .dp-team{background:var(--blue);color:#0e1b2c}
+  .dp-item{background:var(--gold);color:#3a2c00}
+  .dp-final{background:var(--accent);color:#fff}
+  .drows{padding:4px 14px 10px}
+  .dsess{padding:8px 0 3px}
+  .stt{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;font-weight:700;color:var(--gold);background:#242d38;padding:2px 9px;border-radius:6px}
+  .drow{display:grid;grid-template-columns:112px 1fr 84px;gap:10px;align-items:center;
+    padding:5px 0;border-bottom:1px dashed #232b35;font-size:12.5px}
+  .drow:last-child{border-bottom:none}
+  .dtime{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+  .dev{color:#c3cedb}
+  .dround{color:var(--muted);text-align:right;font-size:12px}
+  .drow.final{background:rgba(244,196,48,.06);border-radius:6px}
+  .drow.final .dtime,.drow.final .dev{color:var(--gold);font-weight:700}
+  .drow.final .dround{color:var(--gold);font-weight:800}
+  .dbreak{margin:3px 0;padding:3px 0;text-align:center;font-size:10.5px;letter-spacing:3px;color:#5b6675;
+    border-top:1px dashed #232b35;border-bottom:1px dashed #232b35}
+
+  /* ===== 8. 可访问性 / 打印 / 移动端 ===== */
+  .nav select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+  }
+  @media (max-width:640px){
+    body{padding:18px 12px}
+    h1{font-size:24px}
+    .cstats{flex-wrap:wrap}
+    .cstat{flex:1 1 40%;min-width:130px}
+    .ctimeline{padding-left:34px}
+    .cdot{left:-34px;width:27px;height:27px;font-size:12px}
+    .topbar{padding:10px 12px}
+    .topbar .fx{font-size:12px}
+    .drow{grid-template-columns:92px 1fr 64px;gap:6px}
+  }
+  /* 打印 / 导出 PDF：隐藏下拉，四个页面全部展开，转为白底黑字 */
+  @media print{
+    body{background:#fff!important;color:#000;padding:0}
+    .topbar,.nav{display:none}
+    .page{display:block!important;animation:none!important}
+    .tablescroll{overflow:visible}
+    .hero h1{background:none!important;color:#000!important;
+      -webkit-background-clip:border-box!important;background-clip:border-box!important}
+    .kicker{color:#000!important}
+    .sec h2::before{background:#888!important}
+    .ccard,.cstat,.ctips,.meta,.tip,table,.atable,.daycard{background:#fff!important;border-color:#999!important;box-shadow:none!important}
+    .dhead{background:#eee!important;border-color:#bbb!important}
+    .dnum,.dwk,.dtime,.dev{color:#000!important}
+    .dround,.dbreak{color:#666!important}
+    .dphase{background:#eee!important;color:#000!important;border:1px solid #999}
+    .stt{background:#eee!important;color:#000!important}
+    .drow.final{background:#fff8dc!important}
+    .drow.final .dtime,.drow.final .dev,.drow.final .dround{color:#000!important}
+    thead th{background:#eee!important;color:#000!important}
+    th,td,.ctips li,.note,.note2,.csub,.ja,.ccard p,.legend,.tip,.route-note{color:#000!important}
+    .sec{margin-top:14px;break-inside:avoid}
+    .cstep,.ccard{break-inside:avoid}
+  }
 </style>
 <style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
 <body data-page-node-id="J8L9M7oVeueGgPrA4FTZdr" style="position: relative;">
-<div class="wrap" data-page-node-id="YymIOV535De0ISQFdHIMin">
-
-  <!-- ============ 1. 赛程 ============ -->
-  <h1 data-page-node-id="bmX6wAjo7oKIYABkpVLwLj">名古屋 2026 亚运会 · 乒乓球赛程表</h1>
-  
+<div class="wrap">
+<div class="hero">
+  <span class="kicker">名古屋 2026 · 亚运会乒乓球</span>
+  <h1>名古屋 2026 亚运会 · 乒乓球观赛指南</h1>
+</div>
+  <div class="topbar">
+    <span class="fx">汇率参考：100 日元 ≈ 4.30 人民币（2026-09-05 招行/农行中间价，以实时为准）</span>
+    <div class="nav">
+      <label for="nav">跳转：</label>
+      <select id="nav">
+        <option value="schedule">赛程表</option>
+        <option value="commute">观赛通勤</option>
+        <option value="airport">机场交通</option>
+        <option value="shinkansen">新干线交通</option>
+      </select>
+    </div>
+  </div>
+<div class="page active" id="page-schedule">
 
   <div class="meta" data-page-node-id="dEUrzQjlFJbwnTxdF5BHPs" style="">
     场馆：<b data-page-node-id="oyxDqMpZFG4BzZZCuJoacM">SKY HALL TOYOTA（丰田天空大厅 / スカイホール豊田）</b>，日本爱知县丰田市<br data-page-node-id="0AVpljWWe9x191rjCaYMwn">
     单项赛段：<b data-page-node-id="ph12uog181W03WY7vuuYW6">2026/9/25（周五）– 9/28（周一）</b>|　时间为<b data-page-node-id="ZwhZDTvBTCuyq8z5OJ9gkF">日本时间（UTC+9）</b>；北京时间 = 日本时间 − 1 小时<br data-page-node-id="BoIaS0oLWr0eZ902yH4gE6">
-    <span class="fx" data-page-node-id="gPuw5yFAvJF4qekJl4z1bo">汇率参考：100 日元 ≈ 4.30 人民币（2026-09-05 招行/农行中间价，以实时为准）</span>
-  </div>
+    </div>
 
+  <div class="tablescroll">
   <table data-page-node-id="TVcKLmdJnXLWDseH9lu0GX">
     <thead data-page-node-id="AXyH8hxeNS6ja56Sp7UzIX">
       <tr data-page-node-id="MFUWL5G4lY4d7EkHu8UA8Q">
@@ -120,7 +253,7 @@
         <td class="ev none" data-page-node-id="UwUtkj7k4M2LnfpaFh2UG7">—</td><td class="ev" data-page-node-id="Xnc3lIi0kLWwdti4cLG30k">R4</td><td class="ev" data-page-node-id="9kYaLMZ6pJw7uE1fXAAwrE">R4</td><td class="ev none" data-page-node-id="Q6TmqHhuLBMKoCwLFBmK7H">—</td><td class="ev none" data-page-node-id="2OuNTIUahhVMHYWwfbDOaZ">—</td>
       </tr>
       <tr data-page-node-id="UCcV7Eg8iZZpHEDBRE0Edc">
-        <td class="tt" data-page-node-id="PeefjSE2ktFO6DOJQPqyoX">TTE12</td><td class="jt" data-page-node-id="L8lXEgnYg11tWnSykvshbM">15:30</td>
+        <td class="tt" data-page-node-id="PeefjSE2ktFO6DOJQPqyoX">TTE12</td><td class="jt" data-page-node-id="L8lXEgnYg11tWnSykvshbM">15:30 / 19:30</td>
         <td class="ev" data-page-node-id="mAKljlsG8RBm1FpC7P7gWu">决赛 🏅</td><td class="ev" data-page-node-id="idbi581YgnuQaHzQZzr5mH">QF</td><td class="ev" data-page-node-id="0meQb08AhHN3Y6tDreZ3tI">QF</td><td class="ev" data-page-node-id="fLWBqx9hk16abydGHvXaEL">QF</td><td class="ev" data-page-node-id="sy5ZGreZFwSzBlFYk8ZtBo">QF</td>
       </tr>
       <tr data-page-node-id="tjTiVGkivHBzmB10FRJSP5">
@@ -141,6 +274,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
 
   <div class="legend" data-page-node-id="9VCq7NOqd8Lhzu6adl1Y0p">
     <span class="lg-g" data-page-node-id="t9rA1r2rz3pAg4lynLa7FP">🏅 = 该场产生金牌</span>
@@ -148,9 +282,149 @@
     <span class="lg-m" style="color:var(--muted)" data-page-node-id="vsL8TbxfQkyM3RVfuwcpRz">R1/R2…= 第1/2轮；QF=1/4决赛；SF=半决赛；— = 该场无此项目</span>
   </div>
 
+  <div class="sec">
+    <h2>📅 每日详细赛程（9/20–9/28 · 含团体赛）</h2>
+    <div class="csub">全部为<b style="color:var(--text)">日本时间（UTC+9）</b>，北京时间 = 日本时间 − 1 小时；<b style="color:var(--text)">9/20–24 团体赛</b>，<b style="color:var(--text)">9/25–28 单项赛</b>。日程为 8.24 更新版，仅供参考，以赛事官方为准。</div>
+
+    <div class="days">
+
+      <div class="daycard">
+        <div class="dhead"><span class="dnum">Day 1</span><span class="dwk">周日 · 9/20</span><span class="dphase dp-team">团体 · 预赛</span></div>
+        <div class="drows">
+          <div class="dsess"><span class="stt">TTE1</span></div>
+          <div class="drow"><span class="dtime">10:00–21:00</span><span class="dev">男团</span><span class="dround">Prelim</span></div>
+          <div class="drow"><span class="dtime">10:00–21:00</span><span class="dev">女团</span><span class="dround">Prelim</span></div>
+        </div>
+      </div>
+
+      <div class="daycard">
+        <div class="dhead"><span class="dnum">Day 2</span><span class="dwk">周一 · 9/21</span><span class="dphase dp-team">团体 · 预赛</span></div>
+        <div class="drows">
+          <div class="dsess"><span class="stt">TTE2</span></div>
+          <div class="drow"><span class="dtime">10:00–12:30</span><span class="dev">女团</span><span class="dround">Prelim</span></div>
+          <div class="drow"><span class="dtime">12:30–15:00</span><span class="dev">男团</span><span class="dround">Prelim</span></div>
+          <div class="dbreak">BREAK</div>
+          <div class="dsess"><span class="stt">TTE3</span></div>
+          <div class="drow"><span class="dtime">18:30–19:00</span><span class="dev">女双</span><span class="dround">R64</span></div>
+          <div class="drow"><span class="dtime">19:00–21:30</span><span class="dev">男团</span><span class="dround">Prelim</span></div>
+        </div>
+      </div>
+
+      <div class="daycard">
+        <div class="dhead"><span class="dnum">Day 3</span><span class="dwk">周二 · 9/22</span><span class="dphase dp-team">团体 · R16/QF</span></div>
+        <div class="drows">
+          <div class="dsess"><span class="stt">TTE4</span></div>
+          <div class="drow"><span class="dtime">10:00–12:30</span><span class="dev">女团</span><span class="dround">R16</span></div>
+          <div class="drow"><span class="dtime">12:30–15:00</span><span class="dev">男团</span><span class="dround">R16</span></div>
+          <div class="drow"><span class="dtime">15:10–16:10</span><span class="dev">混双</span><span class="dround">R64</span></div>
+          <div class="dbreak">BREAK</div>
+          <div class="dsess"><span class="stt">TTE5</span></div>
+          <div class="drow"><span class="dtime">19:20–21:50</span><span class="dev">男团</span><span class="dround">QF</span></div>
+          <div class="drow"><span class="dtime">19:20–21:50</span><span class="dev">女团</span><span class="dround">QF</span></div>
+        </div>
+      </div>
+
+      <div class="daycard">
+        <div class="dhead"><span class="dnum">Day 4</span><span class="dwk">周三 · 9/23</span><span class="dphase dp-team">团体 · SF</span></div>
+        <div class="drows">
+          <div class="dsess"><span class="stt">TTE6</span></div>
+          <div class="drow"><span class="dtime">10:00–11:20</span><span class="dev">混双</span><span class="dround">R32</span></div>
+          <div class="drow"><span class="dtime">11:25–12:50</span><span class="dev">男双</span><span class="dround">R64</span></div>
+          <div class="drow"><span class="dtime">12:05–13:35</span><span class="dev">女单</span><span class="dround">R64</span></div>
+          <div class="drow"><span class="dtime">13:45–14:30</span><span class="dev">混双</span><span class="dround">R16</span></div>
+          <div class="dbreak">BREAK</div>
+          <div class="dsess"><span class="stt">TTE7</span></div>
+          <div class="drow"><span class="dtime">17:00–22:00</span><span class="dev">男团</span><span class="dround">SF</span></div>
+          <div class="drow"><span class="dtime">17:00–22:00</span><span class="dev">女团</span><span class="dround">SF</span></div>
+        </div>
+      </div>
+
+      <div class="daycard">
+        <div class="dhead"><span class="dnum">Day 5</span><span class="dwk">周四 · 9/24</span><span class="dphase dp-final">团体决赛 🏅</span></div>
+        <div class="drows">
+          <div class="dsess"><span class="stt">TTE8</span></div>
+          <div class="drow"><span class="dtime">10:00–11:20</span><span class="dev">女双</span><span class="dround">R32</span></div>
+          <div class="drow"><span class="dtime">11:20–13:35</span><span class="dev">男单</span><span class="dround">R64</span></div>
+          <div class="dbreak">BREAK</div>
+          <div class="dsess"><span class="stt">TTE9</span></div>
+          <div class="drow final"><span class="dtime">17:00–19:30</span><span class="dev">男团 决赛</span><span class="dround">Final 🏅</span></div>
+          <div class="drow final"><span class="dtime">19:30–22:00</span><span class="dev">女团 决赛</span><span class="dround">Final 🏅</span></div>
+          <div class="drow"><span class="dtime">22:15–22:30</span><span class="dev">男团 颁奖仪式</span><span class="dround">—</span></div>
+          <div class="drow"><span class="dtime">22:15–22:30</span><span class="dev">女团 颁奖仪式</span><span class="dround">—</span></div>
+        </div>
+      </div>
+
+      <div class="daycard">
+        <div class="dhead"><span class="dnum">Day 6</span><span class="dwk">周五 · 9/25</span><span class="dphase dp-item">单项赛开打</span></div>
+        <div class="drows">
+          <div class="dsess"><span class="stt">TTE10</span></div>
+          <div class="drow"><span class="dtime">10:00–10:45</span><span class="dev">混双</span><span class="dround">QF</span></div>
+          <div class="drow"><span class="dtime">11:00–12:30</span><span class="dev">男双</span><span class="dround">R32</span></div>
+          <div class="drow"><span class="dtime">12:30–14:00</span><span class="dev">女单</span><span class="dround">R32</span></div>
+          <div class="drow"><span class="dtime">14:00–15:30</span><span class="dev">男单</span><span class="dround">R32</span></div>
+          <div class="drow"><span class="dtime">15:30–17:00</span><span class="dev">女双</span><span class="dround">R16</span></div>
+          <div class="drow"><span class="dtime">17:00–18:30</span><span class="dev">男双</span><span class="dround">R16</span></div>
+          <div class="drow"><span class="dtime">18:30–20:00</span><span class="dev">混双</span><span class="dround">SF</span></div>
+        </div>
+      </div>
+
+      <div class="daycard">
+        <div class="dhead"><span class="dnum">Day 7</span><span class="dwk">周六 · 9/26</span><span class="dphase dp-final">混双决赛 🏅</span></div>
+        <div class="drows">
+          <div class="dsess"><span class="stt">TTE11</span></div>
+          <div class="drow"><span class="dtime">10:00–11:30</span><span class="dev">女单</span><span class="dround">R16</span></div>
+          <div class="drow"><span class="dtime">11:30–13:00</span><span class="dev">男单</span><span class="dround">R16</span></div>
+          <div class="dbreak">BREAK</div>
+          <div class="dsess"><span class="stt">TTE12</span></div>
+          <div class="drow"><span class="dtime">15:30–16:15</span><span class="dev">男双</span><span class="dround">QF</span></div>
+          <div class="drow"><span class="dtime">16:15–17:00</span><span class="dev">女单</span><span class="dround">QF</span></div>
+          <div class="drow"><span class="dtime">17:00–17:45</span><span class="dev">男单</span><span class="dround">QF</span></div>
+          <div class="drow"><span class="dtime">17:45–18:30</span><span class="dev">女双</span><span class="dround">QF</span></div>
+          <div class="drow final"><span class="dtime">19:30–20:15</span><span class="dev">混双 决赛</span><span class="dround">Final 🏅</span></div>
+          <div class="drow"><span class="dtime">20:30–20:45</span><span class="dev">混双 颁奖仪式</span><span class="dround">—</span></div>
+        </div>
+      </div>
+
+      <div class="daycard">
+        <div class="dhead"><span class="dnum">Day 8</span><span class="dwk">周日 · 9/27</span><span class="dphase dp-final">男双/女单决赛 🏅</span></div>
+        <div class="drows">
+          <div class="dsess"><span class="stt">TTE13</span></div>
+          <div class="drow"><span class="dtime">12:00–13:30</span><span class="dev">男双</span><span class="dround">SF</span></div>
+          <div class="drow"><span class="dtime">13:30–15:00</span><span class="dev">女单</span><span class="dround">SF</span></div>
+          <div class="dbreak">BREAK</div>
+          <div class="dsess"><span class="stt">TTE14</span></div>
+          <div class="drow final"><span class="dtime">19:00–20:00</span><span class="dev">男双 决赛</span><span class="dround">Final 🏅</span></div>
+          <div class="drow"><span class="dtime">20:15–20:30</span><span class="dev">男双 颁奖仪式</span><span class="dround">—</span></div>
+          <div class="drow final"><span class="dtime">20:30–21:30</span><span class="dev">女单 决赛</span><span class="dround">Final 🏅</span></div>
+          <div class="drow"><span class="dtime">21:45–22:00</span><span class="dev">女单 颁奖仪式</span><span class="dround">—</span></div>
+        </div>
+      </div>
+
+      <div class="daycard">
+        <div class="dhead"><span class="dnum">Day 9</span><span class="dwk">周一 · 9/28</span><span class="dphase dp-final">男单/女双决赛 🏅</span></div>
+        <div class="drows">
+          <div class="dsess"><span class="stt">TTE15</span></div>
+          <div class="drow"><span class="dtime">12:00–13:30</span><span class="dev">女双</span><span class="dround">SF</span></div>
+          <div class="drow"><span class="dtime">13:30–15:00</span><span class="dev">男单</span><span class="dround">SF</span></div>
+          <div class="dbreak">BREAK</div>
+          <div class="dsess"><span class="stt">TTE16</span></div>
+          <div class="drow final"><span class="dtime">19:00–20:00</span><span class="dev">女双 决赛</span><span class="dround">Final 🏅</span></div>
+          <div class="drow"><span class="dtime">20:15–20:30</span><span class="dev">女双 颁奖仪式</span><span class="dround">—</span></div>
+          <div class="drow final"><span class="dtime">20:30–21:30</span><span class="dev">男单 决赛</span><span class="dround">Final 🏅</span></div>
+          <div class="drow"><span class="dtime">21:45–22:00</span><span class="dev">男单 颁奖仪式</span><span class="dround">—</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="note2">来源：比赛日程（8.24 更新，仅供参考），以赛事官方最终版为准；以上全部为日本时间（GMT+9），北京时间请自行 −1。BREAK 为上午/晚上两节之间的间歇。</p>
+  </div>
+
   
 
-  <!-- ============ 2. 观赛通勤 ============ -->
+  </div>
+<div class="page" id="page-commute">
+
   <div class="sec" data-page-node-id="yJ0TSjDn8RTfOHxJbtNugB">
     <h2 data-page-node-id="OaDD2wbmNBz3tjGmhpoI2D">② 观赛通勤：池下站 → Sky Hall Toyota（丰田天空大厅）</h2>
     <div class="csub" data-page-node-id="IBcHhD9wjXnST5E0xCTh9V">场馆最近站：<b data-page-node-id="7tUrGbSxkcXVbDKWLEiv9K">名铁丰田市站</b>（步行约 14 分）/ <b data-page-node-id="d0mOSG6fDImcByTDYcSOPr">新丰田站</b>（爱知环状铁道，步行约 17 分）｜ 推荐方案：地铁东山线 + 鹤舞线/名铁丰田线直通，<b data-page-node-id="wvN5EHwMGHzPSCVqtsp8RQ">仅伏见站换乘 1 次</b></div>
@@ -209,12 +483,15 @@
         <li data-page-node-id="2okrUrlmbykuC1lQFGF1Yc"><b data-page-node-id="G2QQElBGV5CgCsjds7NM30">IC 卡最省心</b>：用 manaca / Suica / TOICA，池下一刷、丰田市一刷，系统自动按「地铁段 + 名铁段」分段扣费，无需分别买票。</li>
         <li data-page-node-id="YJqvUmDotCYUiV7Vv6bbqb"><b data-page-node-id="mFqacLHRP9v8yznMiOOIZl">赛事日更轻松</b>：大型活动当天，名铁丰田市站有临时接驳巴士直达丰田球场（紧邻 SKY HALL），约 5–10 分钟，票价通常凭票免费或仅几百日元。</li>
         <li data-page-node-id="GxdmcMCj5knACXsxzeHbxR"><b data-page-node-id="rKEpo5aTu2czB3X1gR3CwC">耗时含弹性</b>：以上为乘车+步行纯时间，实际请预留等车与进出站，总约 80–90 分钟较稳妥；最早上午场 10:00 开打，建议 <b data-page-node-id="PYoxiJF3q5GCU547CjQCgn">7:30 前</b>从池下出发。</li>
+        <li><b>⏰ 首末班车</b>：池下站 地铁东山线 首班约 05:30 / 末班约 23:54（往名古屋方向），往藤丘方向（返程经伏見回池下）末班约 00:09；伏見换乘的鶴舞線·名鉄豊田線直通 首班约 05:00。名铁丰田线末班亦较晚（约 23:30 后），晚场约 22:00 散场返程通常充裕——精确时刻请以当日时刻表为准。</li>
         <li data-page-node-id="l7oQnkOVxXEPMzf3ZXsGXN"><b data-page-node-id="YJLJaHZXzCbWsV5CFXJAmP">出发前核对</b>：数据基于 2026 年公开资料，建议用 Google 地图 / Yahoo! 乘换案内 搜「池下 → スカイホール豊田」确认当日时刻与精确票价。</li>
       </ul>
     </div>
   </div>
 
-    <!-- ============ 3. 机场 → 池下站 ============ -->
+    </div>
+<div class="page" id="page-airport">
+
   <div class="sec">
     <h2>③ 抵达：中部机场 → 池下站（19:50 落地）</h2>
     <div class="csub">第 1 段为名铁机场线（机场 → 名铁名古屋，μSKY / 特急 / 急行 任选）；第 2 段为名铁名古屋站内换地铁东山线至池下。结构与「② 观赛通勤」同款。</div>
@@ -271,11 +548,14 @@
       </ul>
     </div>
   </div>
-<!-- ============ 4. 池下站 → 名古屋站（转新干线） ============ -->
+</div>
+<div class="page" id="page-shinkansen">
+
   <div class="sec" data-page-node-id="ZZM2yBiupWtJYaydq0dNwy">
     <h2 data-page-node-id="5EcsYTJE4e0seiXORWWZtp">④ 中转：池下站 → 名古屋站（转乘新干线）</h2>
     <div class="csub" data-page-node-id="F7WE37NrYARU11m9BPuz09">用途：观赛结束或中途离开名古屋时，从池下出发坐新干线去东京 / 京都 / 大阪等地。</div>
 
+    <div class="tablescroll">
     <table class="atable" data-page-node-id="SboLcLhx1TRXXzw6jpj1mA">
       <thead data-page-node-id="J01YXywlhkmiOghAxmcVbH">
         <tr data-page-node-id="NthrvCpwL0cq1L9rT47abn">
@@ -301,6 +581,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <p class="tip" data-page-node-id="AQxIbZOHWIXXtejaIPbSlS">⏱ 若赛后直接离城：从池下坐东山线到名古屋站（11 分），再步行至新干线检票口（5–10 分），全程约 20 分钟内可衔接新干线。东山线池下往名古屋方向末班 23:54，赶晚场后离城也来得及。</p>
   </div>
@@ -308,7 +589,31 @@
   <p class="note2" data-page-node-id="RjF50nSs8IC5REd83kSpKj">实时班次 / 末班车精确时刻请用 Google Maps 或 Navitime 按实际日期查询；跨公司换乘费用以现场为准。备选：中部机场有直达丰田市的巴士（经丰田本社 / 东丰田），若住场馆附近可省去绕名古屋的一段。</p>
 
 </div>
-
-
-
-</body></html>
+<script>
+(function(){
+  var nav = document.getElementById("nav");
+  function apply(id){
+    var el = document.getElementById("page-" + id);
+    if (!el) id = "schedule";
+    document.querySelectorAll(".page").forEach(function(p){ p.classList.remove("active"); });
+    document.getElementById("page-" + id).classList.add("active");
+    if (nav) nav.value = id;
+    window.scrollTo(0, 0);
+  }
+  function current(){
+    var id = (location.hash || "").replace(/^#/, "");
+    return document.getElementById("page-" + id) ? id : "schedule";
+  }
+  if (nav){
+    // 直接切换，不依赖 hash→hashchange 往返（更稳，部分预览沙箱下也有效）
+    nav.addEventListener("change", function(){
+      apply(nav.value);
+      if (history.replaceState) history.replaceState(null, "", "#" + nav.value);
+      else location.hash = nav.value;
+    });
+  }
+  window.addEventListener("hashchange", function(){ apply(current()); });
+  apply(current()); // 初始默认 = 赛程表
+})();
+</script>
+</div></body></html>
